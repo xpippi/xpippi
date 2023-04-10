@@ -1,8 +1,8 @@
-package mainto_test
+package main
 
 import "fmt"
 
-func mainto_test() {
+func gotool() {
 
 	i := 1
 	for i <= 3 {
@@ -15,7 +15,7 @@ func mainto_test() {
 	}
 
 	for {
-		fmt.Println("goto 10")
+		fmt.Println("goto10")
 		break
 	}
 
