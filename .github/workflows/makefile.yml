@@ -1,0 +1,28 @@
+name: Fuckerfile 
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: configure
+      run: ./configure
+
+    - name: Install dependencies
+      run: make .PHONY -j99
+
+    - name: Run check
+      run: make check
+
+    - name: Run distcheck
+      run: make distcheck
+#[![Pippis Test](https://github.com/xpippi/xpippi/actions/workflows/main.yml/badge.svg?branch=master&event=check_run)](https://github.com/xpippi/xpippi/actions/workflows/main.yml)
